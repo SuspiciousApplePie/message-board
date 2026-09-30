@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <form action="/new" method="post">
+      <h1><%= title %></h1>
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required />
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea name="message" id="message"></textarea>
+      </div>
+      <button type="submit">Send</button>
+    </form>
+  </body>
+</html>
