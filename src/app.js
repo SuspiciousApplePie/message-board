@@ -62,7 +62,7 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Listening to PORT ${PORT}`);
+  console.log(`Listening to PORT ${PORT}`); // eslint-disable-line no-console
 });
 
 function newMessage(user, text) {
