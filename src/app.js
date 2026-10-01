@@ -22,12 +22,21 @@ const messages = [
   },
 ];
 
+const navBar = [
+  { name: "Home", link: "/" },
+  { name: "New Message", link: "/new" },
+];
+
 app.get("/", (req, res) => {
-  res.render("index", { title: "Message Board", messages: messages });
+  res.render("index", {
+    title: "Message Board",
+    messages: messages,
+    navBar: navBar,
+  });
 });
 
 app.get("/new", (req, res) => {
-  res.render("form", { title: "Send a message" });
+  res.render("form", { title: "Send a message", navBar: navBar });
 });
 
 app.post("/new", (req, res) => {
