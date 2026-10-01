@@ -57,7 +57,7 @@ app.post("/new", (req, res) => {
   res.redirect("/");
 });
 
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
   res.status(404).send(err);
 });
 
