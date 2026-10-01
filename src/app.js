@@ -1,6 +1,7 @@
 import express from "express";
 import process from "node:process";
 import path from "node:path";
+import NotFoundError from "./error/error.js";
 
 const app = express();
 app.set("views", path.join(import.meta.dirname, "views"));
@@ -39,9 +40,26 @@ app.get("/new", (req, res) => {
   res.render("form", { title: "Send a message", navBar: navBar });
 });
 
+app.get("/message/:msgId", (req, res, next) => {
+  const message = messages.find(
+    (msg, index) => Number(req.params.msgId) === index,
+  );
+
+  if (message) {
+    res.render("messageInfo", { message: message, navBar: navBar });
+  } else {
+    next(new NotFoundError("Page not found"));
+  }
+});
+
 app.post("/new", (req, res) => {
   messages.push(newMessage(req.body.name, req.body.message));
   res.redirect("/");
+});
+
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.status(404).send(err);
 });
 
 app.listen(PORT, () => {
