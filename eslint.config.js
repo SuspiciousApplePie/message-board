@@ -5,7 +5,7 @@ export default defineConfig([
   eslintConfigPrettier,
   {
     ignores: ["**/*.config.js", "!**/eslint.config.js", "node_modules"],
-    files: ["./src/*.js"],
+    files: ["./src/**/*.js"],
     rules: {
       "prefer-const": "error",
       "no-unused-vars": "error",

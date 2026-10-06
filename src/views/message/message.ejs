@@ -1,4 +1,4 @@
-<h2><%= message.user %></h2>
+<h2><%= message.username %></h2>
 <p><%= message.text %></p>
-<time><%= message.added %></time>
-<div><a href="message/<%= message.index %>">Open</a></div>
+<time><%= formatDistanceToNow(message.added, {addSuffix: true}) %></time>
+<div><a href="message/<%= message.id %>">Open</a></div>

@@ -13,8 +13,8 @@
         <% }); %>
       </ul>
     </nav>
-    <h1>Sent by: <%= message.user %></h1>
+    <h1>Sent by: <%= message.username %></h1>
   </body>
   <p><%= message.text %></p>
-  <div>Sent in <time datetime=""><%= message.added %></time></div>
+  <div>Sent in <time datetime=""><%= formatDistanceToNow(message.added, {addSuffix: true}) %></time></div>
 </html>
