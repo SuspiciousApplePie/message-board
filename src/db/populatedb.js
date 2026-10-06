@@ -16,7 +16,7 @@ VALUES
 `;
 
 async function main() {
-  console.log("...seeding");
+  console.log("...seeding"); // eslint-disable-line no-console
   const client = new Client({
     connectionString: process.argv[2],
   });
@@ -25,7 +25,7 @@ async function main() {
   await client.query(SQL);
   await client.end();
 
-  console.log("Done");
+  console.log("Done"); // eslint-disable-line no-console
 }
 
 main();
